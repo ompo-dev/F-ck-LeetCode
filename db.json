@@ -1,0 +1,31 @@
+{
+  "responses": [
+    {
+      "id": 1,
+      "prompt": "Análise de um problema LeetCode sobre arrays",
+      "response": {
+        "explanation": "Este problema é sobre encontrar a soma de dois números em um array que resulte em um alvo específico. É um problema clássico conhecido como 'Two Sum'.",
+        "solution": "```javascript\nfunction twoSum(nums, target) {\n  const map = new Map();\n  \n  for (let i = 0; i < nums.length; i++) {\n    const complement = target - nums[i];\n    \n    if (map.has(complement)) {\n      return [map.get(complement), i];\n    }\n    \n    map.set(nums[i], i);\n  }\n  \n  return [];\n}\n```",
+        "explanation_detailed": "A solução utiliza um hash map para armazenar os números já vistos e seus índices. Para cada número, calculamos seu complemento (valor que, somado ao número atual, resulta no alvo). Se o complemento já estiver no map, encontramos a solução. A complexidade é O(n) no tempo e espaço."
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "Análise de um problema LeetCode sobre strings",
+      "response": {
+        "explanation": "Este problema pede para verificar se uma string é um palíndromo, ignorando caracteres não alfanuméricos e sem diferenciar maiúsculas e minúsculas.",
+        "solution": "```javascript\nfunction isPalindrome(s) {\n  // Remover caracteres não alfanuméricos e converter para minúsculas\n  s = s.toLowerCase().replace(/[^a-z0-9]/g, '');\n  \n  // Verificar se é palíndromo usando dois ponteiros\n  let left = 0;\n  let right = s.length - 1;\n  \n  while (left < right) {\n    if (s[left] !== s[right]) {\n      return false;\n    }\n    left++;\n    right--;\n  }\n  \n  return true;\n}\n```",
+        "explanation_detailed": "A solução primeiro remove todos os caracteres não alfanuméricos e converte a string para minúsculas. Em seguida, usa a abordagem de dois ponteiros para verificar se a string é igual quando lida da esquerda para a direita e vice-versa. A complexidade é O(n) no tempo e O(1) no espaço."
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "Análise de um problema LeetCode sobre listas encadeadas",
+      "response": {
+        "explanation": "Este problema pede para inverter uma lista encadeada singly-linked. Você precisa transformar a lista de A→B→C para C→B→A.",
+        "solution": "```javascript\nfunction reverseList(head) {\n  let prev = null;\n  let current = head;\n  \n  while (current !== null) {\n    const next = current.next;\n    current.next = prev;\n    prev = current;\n    current = next;\n  }\n  \n  return prev;\n}\n```",
+        "explanation_detailed": "A solução itera pela lista, invertendo cada ponteiro 'next' para apontar para o nó anterior. Usamos três variáveis para rastrear o nó atual, o anterior e o próximo. A complexidade é O(n) no tempo e O(1) no espaço."
+      }
+    }
+  ]
+} 

@@ -16,7 +16,10 @@
         "width": 800,
         "height": 600,
         "contentProtected": true,
-        "skipTaskbar": true
+        "skipTaskbar": true,
+        "alwaysOnTop": true,
+        "visible": true,
+        "focus": true
       }
     ],
     "security": {
